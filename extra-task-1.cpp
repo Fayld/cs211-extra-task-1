@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <cmath>
 double seconds_difference(double time_1, double time_2)
 {
     // your implementation goes here...
@@ -91,6 +92,10 @@ double to_24_hour_clock(double hours)
         with integer and fractional part of a hours separately.
         
     */
+    assert(hours >= 0);
+    double mts = hours - floor(hours);
+    int hrs = floor(hours);
+    return (hrs % 24) + mts;
 }
 
 /*
