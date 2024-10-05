@@ -160,6 +160,16 @@ double time_to_utc(int utc_offset, double time)
         >>> time_to_utc(-1, 23.0)
         0.0
     */
+    double t = time - utc_offset;
+    if (t < 0)
+    {
+         t += 24;
+    }
+    else if (t >= 24)
+    {
+         t -= 24;
+    }
+    return t;
 }
 
 double time_from_utc(int utc_offset, double time)
