@@ -201,4 +201,5 @@ double time_from_utc(int utc_offset, double time)
         >>> time_from_utc(+1, 23.0)
         0.0
     */
+    return time_to_utc(-utc_offset, time);
 }
